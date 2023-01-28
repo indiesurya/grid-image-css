@@ -1,0 +1,46 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="grid-gallery.css" media="all">
+    <title>CSS Grid</title>
+</head>
+
+<body>
+    <div class="container">
+
+    </div>
+</body>
+<script>
+    for(let i = 0; i< 30; i++){
+        const divGallery = document.createElement("div")
+        
+        let width = Math.floor(Math.random() * 4) + 1
+        let height = Math.floor(Math.random() * 4) + 1
+        divGallery.classList.add('gallery-container', "w-"+width+"", "h-"+height+"")
+
+        const divGalleryItem =  document.createElement("div")
+        divGalleryItem.classList.add('gallery-item')
+        divGallery.appendChild(divGalleryItem)
+
+
+        const divImage = document.createElement("div")
+        divImage.classList.add('image')
+        divGalleryItem.appendChild(divImage)
+
+        const img = document.createElement('img');
+        const category = ['nature', 'sport', 'street', 'animals', 'food', 'experimental','textures','fashion', 'beauty', 'film', 'food', 'drink', 'people', 'spirituality', 'business', 'work', 'athletics', 'health', 'wellness', 'art','culture', 'travel']
+        img.setAttribute("src", "https://source.unsplash.com/1600x900/?"+ category[Math.floor(Math.random() * category.length)]);
+
+        divImage.appendChild(img)
+
+
+        const container = document.getElementsByClassName('container')[0]
+        container.appendChild(divGallery);
+    }
+
+    const category = ['nature', 'sport', 'street', 'animals', 'food']
+</script>
+</html>
